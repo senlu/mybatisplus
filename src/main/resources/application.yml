@@ -50,4 +50,3 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   #mapper的xml文件路径
   mapper-locations: classpath:mybatis/mapper/**/*.xml
-  typeAliasesPackage: com.yb.demo.pojo.model.db1;com.yb.demo.pojo.model.db2
