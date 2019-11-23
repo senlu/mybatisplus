@@ -1,0 +1,53 @@
+#端口
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mybatisplus-demo
+  # DB 配置
+  datasource:
+    dynamic:
+      #主数据源
+      primary: db1
+      p6spy: true
+      druid:
+        initial-size: 5
+        min-idle: 5
+        max-active: 20
+        validation-query: SELECT 1 FROM DUAL
+        test-while-idle: true
+        #test-on-borrow: true
+        validation-query-timeout: 20
+        filters: stat,wall,slf4j
+      datasource:
+        # db1-主数据源
+        db1:
+          url: jdbc:mysql://123.207.xx.xx:3306/lusen?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
+          username: root
+          password: xxx
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        # db2-数据源
+        db2:
+          url: jdbc:mysql://123.207.xx.xx:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
+          username: root
+          password: xxx
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        # db3-数据源
+        db3:
+          url: jdbc:mysql://123.207.xx.xx:3306/mysql?useSSL=false&characterEncoding=UTF8
+          username: root
+          password: xxx
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      capital-mode: true
+  configuration:
+    #打印sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #mapper的xml文件路径
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  typeAliasesPackage: com.yb.demo.pojo.model.db1;com.yb.demo.pojo.model.db2
