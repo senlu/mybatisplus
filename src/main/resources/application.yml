@@ -25,19 +25,19 @@ spring:
         db1:
           url: jdbc:mysql://123.207.xx.xx:3306/lusen?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
           username: root
-          password: xxx
+          password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
         # db2-数据源
         db2:
           url: jdbc:mysql://123.207.xx.xx:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
           username: root
-          password: xxx
+          password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
         # db3-数据源
         db3:
           url: jdbc:mysql://123.207.xx.xx:3306/mysql?useSSL=false&characterEncoding=UTF8
           username: root
-          password: xxx
+          password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis-plus:

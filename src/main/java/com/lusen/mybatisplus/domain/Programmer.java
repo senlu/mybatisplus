@@ -1,8 +1,6 @@
 package com.lusen.mybatisplus.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import lombok.ToString;
 
 import java.util.Date;
 
@@ -11,9 +9,7 @@ import java.util.Date;
  * @description
  * @data2019/11/23
  */
-@Data
 @TableName("t_programmer")//对应数据库表名
-@ToString
 public class Programmer
 {
     /**
@@ -41,4 +37,61 @@ public class Programmer
      */
     private Date joinDate;
 
+    public Long getId()
+    {
+        return id;
+    }
+
+    public void setId(Long id)
+    {
+        this.id = id;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public String getSex()
+    {
+        return sex;
+    }
+
+    public void setSex(String sex)
+    {
+        this.sex = sex;
+    }
+
+    public Date getJoinDate()
+    {
+        return joinDate;
+    }
+
+    public void setJoinDate(Date joinDate)
+    {
+        this.joinDate = joinDate;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Programmer{" + "id=" + id + ", type='" + type + '\''
+            + ", name='" + name + '\'' + ", sex='" + sex + '\'' + ", joinDate="
+            + joinDate + '}';
+    }
 }
