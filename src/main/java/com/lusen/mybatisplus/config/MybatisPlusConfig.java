@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @MapperScan({"com.lusen.mybatisplus.dao"})
 @EnableTransactionManagement
-@SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
 public class MybatisPlusConfig
 {
     /**
