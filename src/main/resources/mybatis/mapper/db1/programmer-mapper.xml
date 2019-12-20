@@ -5,7 +5,11 @@
 <mapper namespace="com.lusen.mybatisplus.dao.ProgrammerDao">
 
 
-    <select id="selectByName" resultType="com.lusen.mybatisplus.domain.Programmer">
-      select * from t_programmer
+    <select id="selectByName" parameterType="java.lang.String"   resultType="com.lusen.mybatisplus.domain.Programmer">
+      select * from t_programmer t
+      <if test="name != null and name != ''">
+       where t.name = #{name}
+      </if>
+
     </select>
 </mapper>

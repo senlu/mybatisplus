@@ -1,5 +1,7 @@
 package com.lusen.mybatisplus.domain;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.util.Date;
@@ -12,9 +14,23 @@ import java.util.Date;
 @TableName("t_programmer")//对应数据库表名
 public class Programmer
 {
+    public Programmer()
+    {
+        super();
+    }
+    public Programmer(Long id, String type, String name, String sex, Date joinDate)
+    {
+        super();
+        this.id =id;
+        this.type =type;
+        this.name =name;
+        this.sex =sex;
+        this.joinDate =joinDate;
+    }
     /**
      * 主键id
      */
+    //@TableId(value = "id",type = IdType.INPUT)
     private Long id;
 
     /**

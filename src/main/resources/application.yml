@@ -1,14 +1,14 @@
-#¶Ë¿Ú
+#ç«¯å£
 server:
   port: 8080
 
 spring:
   application:
     name: mybatisplus-demo
-  # DB ÅäÖÃ
+  # DB é…ç½®
   datasource:
     dynamic:
-      #Ö÷Êı¾İÔ´
+      #ä¸»æ•°æ®æº
       primary: db1
       p6spy: true
       druid:
@@ -21,32 +21,34 @@ spring:
         validation-query-timeout: 20
         filters: stat,wall,slf4j
       datasource:
-        # db1-Ö÷Êı¾İÔ´
+        # db1-ä¸»æ•°æ®æº
         db1:
-          url: jdbc:mysql://123.207.xx.xx:3306/lusen?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
+          url: jdbc:mysql://123.207.xx:3306/lusen?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
           username: root
-          password: root
+          password: xxx
           driver-class-name: com.mysql.cj.jdbc.Driver
-        # db2-Êı¾İÔ´
+        # db2-æ•°æ®æº
         db2:
-          url: jdbc:mysql://123.207.xx.xx:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
+          url: jdbc:mysql://123.207.xx:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
           username: root
-          password: root
+          password: xxx
           driver-class-name: com.mysql.cj.jdbc.Driver
-        # db3-Êı¾İÔ´
+        # db3-æ•°æ®æº
         db3:
-          url: jdbc:mysql://123.207.xx.xx:3306/mysql?useSSL=false&characterEncoding=UTF8
+          url: jdbc:mysql://123.207.xx:3306/mysql?useSSL=false&characterEncoding=UTF8
           username: root
-          password: root
+          password: xxx
           driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis-plus:
   global-config:
     db-config:
-      id-type: auto
-      capital-mode: true
+      #id-type: auto
+      #æ•°æ®åº“å¤§å†™ä¸‹åˆ’çº¿è½¬æ¢
+      capital-mode: false
   configuration:
-    #´òÓ¡sql
+    #æ‰“å°sql
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  #mapperµÄxmlÎÄ¼şÂ·¾¶
+    map-underscore-to-camel-case: false
+  #mapperçš„xmlæ–‡ä»¶è·¯å¾„
   mapper-locations: classpath:mybatis/mapper/**/*.xml

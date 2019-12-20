@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,7 +24,7 @@ class ProgrammerDaoTest
     @Test
     void selectByName()
     {
-        List<Programmer> programmerList = programmerDao.selectByName("lusen");
+        List<Programmer> programmerList = programmerDao.selectByName("");
         programmerList.forEach(System.out::println);
     }
     @Test
@@ -32,5 +33,13 @@ class ProgrammerDaoTest
         Page<Programmer> page = new Page();
         programmerDao.listProgrammer(page);
         page.getRecords().forEach(System.out::println);
+    }
+
+    @Test
+    void insert()
+    {
+        Programmer p = new Programmer(3L,"C++","c++程序员","男",new Date());
+
+        programmerDao.insert(p);
     }
 }
